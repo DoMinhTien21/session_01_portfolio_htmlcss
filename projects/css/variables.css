@@ -1,0 +1,252 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+    --color-primary: #6366f1;
+    --color-secondary: #8b5cf6;
+    --color-dark: #1e293b;
+    --color-light: #f8fafc;
+    --color-text: #334155;
+
+    --font-main: 'Segoe UI', sans-serif;
+}
+
+/* SMOOTH SCROLL */
+html {
+    scroll-behavior: smooth;
+}
+
+/* BODY */
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+
+    background: rgba(248, 250, 252, 0.95);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* LOGO */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    color: var(--color-primary);
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+/* NAV LINKS */
+.nav a {
+    text-decoration: none;
+
+    color: var(--color-dark);
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.nav a:hover {
+    color: var(--color-primary);
+}
+
+/* UNDERLINE EFFECT */
+.nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0%;
+    height: 2px;
+
+    background: var(--color-primary);
+
+    transition: 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 2rem;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-primary),
+            var(--color-secondary)
+        );
+}
+
+/* HERO TITLE */
+.hero h1 {
+    font-size: 3.5rem;
+
+    margin-bottom: 1rem;
+}
+
+/* HERO SUBTITLE */
+.hero p {
+    font-size: 1.25rem;
+
+    margin-bottom: 2rem;
+
+    max-width: 700px;
+
+    line-height: 1.6;
+}
+
+/* CTA BUTTON */
+.cta-button {
+    text-decoration: none;
+
+    background: white;
+    color: var(--color-primary);
+
+    padding: 1rem 2rem;
+
+    border-radius: 999px;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.cta-button:hover {
+    transform: scale(1.05);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+/* HIDE CHECKBOX */
+.menu-toggle {
+    display: none;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    color: var(--color-dark);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1023px) {
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* SHOW HAMBURGER */
+    .hamburger {
+        display: block;
+    }
+
+    /* MOBILE NAV */
+    .nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 1.5rem;
+
+        padding: 1.5rem 0;
+
+        display: none;
+    }
+
+    /* TOGGLE NAV */
+    .menu-toggle:checked ~ .nav {
+        display: flex;
+    }
+
+    /* HERO MOBILE */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
