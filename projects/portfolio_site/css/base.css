@@ -28,3 +28,29 @@ img {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* Tablet */
+
+@media (max-width: 1023px) {
+
+    .container {
+        width: 92%;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    section {
+        padding: 70px 0 !important;
+    }
+
+    h1 {
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+    }
+}
