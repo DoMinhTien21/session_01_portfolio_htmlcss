@@ -54,3 +54,36 @@ img {
         font-size: 2rem !important;
     }
 }
+
+/* Improve image responsiveness */
+
+img {
+    display: block;
+}
+
+/* Better spacing on small screens */
+
+@media (max-width: 767px) {
+
+    .hero-content,
+    .about-content,
+    .contact-info {
+        text-align: center;
+    }
+
+    .portfolio-filters {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
+    .contact-form {
+        padding: 24px;
+    }
+
+    .footer {
+        padding-top: 2.5rem;
+    }
+}
